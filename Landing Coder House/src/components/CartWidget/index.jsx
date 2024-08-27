@@ -5,7 +5,11 @@ import { CiShoppingCart } from "react-icons/ci";
 function CartWidget() {
   return (
     <>
-      <CiShoppingCart className={styles.carrito}/>
+    <div className={styles.carrito}>
+
+        <CiShoppingCart className={styles.carritoIcono}/>
+        <div className={styles.contadorCarrito}>0</div>
+    </div>
     </>
   )
 }

@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -7,15 +7,16 @@
     text-align: center;
     align-items: center;
 }
-.titulo{
+.titulo {
     color: white;
     font-size: 24px;
 }
-.links{
+
+.links {
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 50%;
 }
 .links a {
@@ -25,10 +26,21 @@
     padding: 16px 18px;
     text-decoration: none;
     font-size: 17px;
-    
-  }
-  .links a:hover {
+}
+
+.links a:hover {
     background-color: #ddd;
     border-radius: 50px;
     color: black;
-  }
+}
+.menu-icon {
+    display: none; 
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {  
+    .menu-icon {
+        display: block; 
+    }
+}

@@ -1,11 +1,28 @@
-.carrito{
-    color: #f2f2f2;
-    font-size: 35px;
-    padding: 12px 16px;
+.carrito {
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer;
+    transition: 1s;
+    margin: 0 15px;
+}
+.carrito:hover{
+    color: #ddd;
+}
+.carritoIcono {
+    font-size: 50px; 
+    padding: 0 5px;
 }
 
-.carrito:hover{
-    background-color: #ddd;
-    border-radius: 50px;
-    color: black;
+.contadorCarrito {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    background-color: #ddd; 
+    color: rgb(0, 0, 0); 
+    border-radius: 50%; 
+    padding: 2px 6px;
+    font-size: 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
 }
