@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import ItemList from '../ItemList/INDEX.JSX';
+import styles from './ItemListContainer.module.css'; // Asegúrate de usar el nombre correcto del archivo CSS
 
 function ItemListContainer() {
   const { categoryId } = useParams();
@@ -15,7 +16,7 @@ function ItemListContainer() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        // Aquí filtramos por categoría si categoryId está definido
+        // Filtrar por categoría si categoryId está definido
         const filteredItems = categoryId
           ? data.filter(item => item.category === categoryId)
           : data;
@@ -30,22 +31,12 @@ function ItemListContainer() {
     fetchItems();
   }, [categoryId]);
 
-  if (loading) return <div>Cargando...</div>;
+  if (loading) return <div className={styles.loading}>Cargando...</div>;
 
   return (
-    <div>
+    <div className={styles.container}>
       <h2>{categoryId ? `Productos de la categoría ${categoryId}` : 'Todos los productos'}</h2>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <h3>{item.title}</h3>
-            <h3>{item.category}</h3>
-            <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px' }} />
-            <p>{item.description}</p>
-            <Link to={`/product/${item.id}`}>Ver más</Link>
-          </li>
-        ))}
-      </ul>
+      <ItemList items={items} />
     </div>
   );
 }
