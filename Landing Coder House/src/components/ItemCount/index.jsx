@@ -26,4 +26,4 @@ function ItemCount({ item }) {
   );
 }
 
-export default ItemCount;
+export default ItemCount; 
