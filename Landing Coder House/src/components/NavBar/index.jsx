@@ -10,11 +10,11 @@ function NavBar() {
         <div className={styles.links}>
           
           <Link to="/"><h1 className={styles.titulo}>Mi Tienda</h1></Link>
-            <Link to="/">inicio</Link>
-            <Link to="/category/men's clothing">men's clothing</Link>
-            <Link to="/category/jewelery">jewelery</Link>
-            <Link to="/category/electronics">electronics</Link>
-            <Link to="/category/women's clothing">women's clothing</Link>
+            <Link to="/" className={styles.navbarLink}>inicio</Link>
+            <Link to="/category/men's clothing" className={styles.navbarLink}>men's clothing</Link>
+            <Link to="/category/jewelery" className={styles.navbarLink}>jewelery</Link>
+            <Link to="/category/electronics" className={styles.navbarLink}>electronics</Link>
+            <Link to="/category/women's clothing" className={styles.navbarLink}>women's clothing</Link>
 
         </div> 
         <CartWidget />

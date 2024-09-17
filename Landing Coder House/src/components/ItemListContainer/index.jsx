@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/INDEX.JSX';
-import styles from './ItemListContainer.module.css'; // Asegúrate de usar el nombre correcto del archivo CSS
+import styles from './ItemListContainer.module.css'; 
 
 function ItemListContainer() {
   const { categoryId } = useParams();

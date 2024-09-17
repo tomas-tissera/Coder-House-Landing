@@ -8,9 +8,9 @@ function ItemList({ items }) {
       {items.map(item => (
         <li key={item.id} className={styles.item}>
           <h3>{item.title}</h3>
-          <h4>Categoria: {item.category}</h4>
           <div className={styles.itemDatos}>
             <img src={item.image} alt={item.title} className={styles.image} />
+            <p>Categoria: {item.category}</p>
             <p>{item.description}</p>
             <p className={styles.precio}>Precio: ${item.price}</p>
           </div>

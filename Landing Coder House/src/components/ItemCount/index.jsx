@@ -12,7 +12,9 @@ function ItemCount({ item }) {
   const handleDecrement = () => {
     setCount(prevCount => Math.max(prevCount - 1, 1));
   };
-
+  const anadir = () =>{
+    alert("Añadido al Carrito")
+  }
   return (
     <div className={styles.itemCount}>
         <div className={styles.itemContador}>
@@ -20,7 +22,7 @@ function ItemCount({ item }) {
             <span>{count}</span>
             <button onClick={handleIncrement}>+</button>
         </div>
-      <button className={styles.addButton}>Añadir al carrito</button>
+      <button className={styles.addButton} onClick={anadir}>Añadir al carrito</button>
     </div>
   );
 }
