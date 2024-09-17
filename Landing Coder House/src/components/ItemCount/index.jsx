@@ -1,4 +1,3 @@
-// ItemCount.jsx
 import React, { useState } from 'react';
 import styles from './ItemCount.module.css'; 
 

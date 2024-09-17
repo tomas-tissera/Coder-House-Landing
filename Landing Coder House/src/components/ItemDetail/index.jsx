@@ -1,6 +1,5 @@
-// ItemDetail.jsx
 import React from 'react';
-import ItemCount from '../ItemCount'; // Asegúrate de que la ruta sea correcta
+import ItemCount from '../ItemCount'; 
 import styles from './ItemDetail.module.css'; 
 
 function ItemDetail({ item }) {
