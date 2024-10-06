@@ -7,7 +7,7 @@ function ItemList({ items }) {
     <ul className={styles.itemList}>
       {items.map(item => (
         <li key={item.id} className={styles.item}>
-          <h3>{item.title}</h3>
+          <h3>{item.name}</h3>
           <div className={styles.itemDatos}>
             <img src={item.image} alt={item.title} className={styles.image} />
             <p className={styles.category}>Categoria: {item.category}</p>
