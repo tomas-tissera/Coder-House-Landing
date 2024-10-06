@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/INDEX.JSX';
 import styles from './ItemListContainer.module.css'; 
+import getProducts from '../../firebase/db';  // Asegúrate de que esté exportado correctamente
 
 function ItemListContainer() {
   const { categoryId } = useParams();
@@ -9,26 +10,21 @@ function ItemListContainer() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchItems = async () => {
+    const fetchFirebaseItems = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        // Filtrar por categoría si categoryId está definido
+        const firebaseItems = await getProducts();
         const filteredItems = categoryId
-          ? data.filter(item => item.category === categoryId)
-          : data;
+          ? firebaseItems.filter(item => item.category === categoryId)
+          : firebaseItems;
         setItems(filteredItems);
       } catch (error) {
-        console.error('Error fetching items:', error);
+        console.error('Error fetching items from Firebase:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchItems();
+    fetchFirebaseItems();
   }, [categoryId]);
 
   if (loading) return <div className={styles.loading}>Cargando...</div>;
