@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/INDEX.JSX';
 import styles from './ItemListContainer.module.css'; 
-import getProducts from '../../firebase/db';  // Asegúrate de que esté exportado correctamente
+import getProducts, { getProductsFromCategory } from '../../firebase/db';
 
 function ItemListContainer() {
   const { categoryId } = useParams();
@@ -10,21 +10,25 @@ function ItemListContainer() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchFirebaseItems = async () => {
+    const fetchItems = async () => {
       try {
-        const firebaseItems = await getProducts();
-        const filteredItems = categoryId
-          ? firebaseItems.filter(item => item.category === categoryId)
-          : firebaseItems;
-        setItems(filteredItems);
+        let fetchedItems;
+        if (categoryId) {
+          // Obtener productos filtrados por categoría
+          fetchedItems = await getProductsFromCategory(categoryId);
+        } else {
+          // Obtener todos los productos
+          fetchedItems = await getProducts();
+        }
+        setItems(fetchedItems);
       } catch (error) {
-        console.error('Error fetching items from Firebase:', error);
+        console.error('Error fetching items:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchFirebaseItems();
+    fetchItems();
   }, [categoryId]);
 
   if (loading) return <div className={styles.loading}>Cargando...</div>;
