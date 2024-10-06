@@ -2,9 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail';
 import styles from './ItemDetailContainer.module.css'; 
+import getProducts from '../../firebase/db';  
 
 function ItemDetailContainer() {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,13 +13,12 @@ function ItemDetailContainer() {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const url = `https://fakestoreapi.com/products/${id}`;
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        const allProducts = await getProducts();  // Obtiene todos los productos desde Firebase
+        const foundItem = allProducts.find(product => product.id === id);  // Busca el producto por id
+        if (!foundItem) {
+          throw new Error('Producto no encontrado');
         }
-        const data = await response.json();
-        setItem(data);
+        setItem(foundItem);  // Actualiza el estado con el producto encontrado
       } catch (error) {
         console.error('Error fetching item details:', error);
         setError(error.message);

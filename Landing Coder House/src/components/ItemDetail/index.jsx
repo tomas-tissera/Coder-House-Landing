@@ -5,6 +5,7 @@ import styles from './ItemDetail.module.css';
 function ItemDetail({ item }) {
   return (
     <div className={styles.container}>
+      <h2>{item.name}</h2>
       <img src={item.image} alt={item.title} className={styles.image} />
       <h1 className={styles.title}>{item.title}</h1>
       <p className={styles.description}>{item.description}</p>
