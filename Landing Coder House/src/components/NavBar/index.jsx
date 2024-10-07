@@ -17,7 +17,9 @@ function NavBar() {
             <Link to="/category/Celulares" className={styles.navbarLink}>Celulares</Link>
 
         </div> 
-        <CartWidget />
+        <Link to="/carrito">
+          <CartWidget />
+        </Link>
     </div>
     </>
   )

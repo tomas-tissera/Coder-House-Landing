@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/INDEX.JSX';
 import styles from './ItemListContainer.module.css'; 
 import getProducts, { getProductsFromCategory } from '../../firebase/db';
-
+import { useContext } from 'react';
+import cartContext from '../../context/cartContext'
 function ItemListContainer() {
   const { categoryId } = useParams();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const {cart} = useContext(cartContext);
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -27,7 +28,8 @@ function ItemListContainer() {
         setLoading(false);
       }
     };
-
+    console.log(cart);
+    
     fetchItems();
   }, [categoryId]);
 
