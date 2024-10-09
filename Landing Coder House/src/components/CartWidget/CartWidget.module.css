@@ -4,13 +4,18 @@
     cursor: pointer;
     transition: 1s;
     margin: 0 15px;
+    
+    
 }
 .carrito:hover{
-    color: #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); 
+    
 }
 .carritoIcono {
     font-size: 50px; 
     padding: 0 5px;
+    color: white;
 }
 
 .contadorCarrito {
