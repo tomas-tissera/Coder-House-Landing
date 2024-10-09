@@ -29,9 +29,12 @@ function CartProvider({ children }) {
             ).filter(item => item.qty > 0) // Elimina el item si la qty es 0
         );
     };
-
+     // Función para vaciar el carrito
+     const clearCart = () => {
+        setCart([]);
+    };
     return (
-        <cartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+        <cartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
             {children}
         </cartContext.Provider>
     );

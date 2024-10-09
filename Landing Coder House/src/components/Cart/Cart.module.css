@@ -46,3 +46,21 @@
 .cartBtn:hover{
     background-color: rgba(173, 172, 172, 0.452);
 }
+.loading {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(15, 15, 15, 0.9); 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    z-index: 1000; 
+    text-align: center; 
+}
+
+.loading p {
+    color: rgb(255, 255, 255);
+    font-size: 18px; 
+    margin: 0; 
+}
