@@ -9,4 +9,3 @@ export const useCartContext = () => {
 }
 
 export default cartContext;
-    
