@@ -1,8 +1,9 @@
 
 .cart{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+
+    grid-column-gap: 20px;
     border: solid #24242452 1px;
     padding: 55px;
     margin: 15px;
@@ -12,71 +13,4 @@
 }
 .cartElement{
     text-align: center;
-}
-.cartLi{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cartIconDelet{
-    color: red;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.cartIconDelet:hover{
-    color: rgb(189, 7, 7);
-}
-.cartTotal{
-    color: #000;
-    font-size: 20px;
-}
-.cartBtn{
-    width: 100%;
-    height: 35px;
-    border-radius: 8px;
-    border: solid #24242452 1px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-.cartBtn:hover{
-    background-color: rgba(173, 172, 172, 0.452);
-}
-.loading {
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: rgba(15, 15, 15, 0.9); 
-    border-radius: 8px; 
-    padding: 20px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    z-index: 1000; 
-    text-align: center; 
-}
-
-.loading p {
-    color: rgb(255, 255, 255);
-    font-size: 18px; 
-    margin: 0; 
-}
-.emptyCart {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 350px;
-    text-align: center; 
-    background-color: rgba(255, 255, 255, 0.9); 
-    color: #555; 
-    font-size: 24px; 
-    font-weight: bold; 
-    border: 2px dashed #ccc; 
-    border-radius: 8px; 
-    padding: 20px; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    margin: 25px;
 }

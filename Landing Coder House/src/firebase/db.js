@@ -38,14 +38,15 @@ export const getProductsFromCategory = async (category) => {
   }
 };
 
-export const getCompra = async(total,compra) => {
+export const getCompra = async(total,compra,formData) => {
   const now = new Date();
   const formattedDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
 
   const docData = {
     total: total,
     compra:compra,
-    dateExample: formattedDate 
+    dateExample: formattedDate,
+    comprador:formData
 };
   console.log(docData);
   try {
