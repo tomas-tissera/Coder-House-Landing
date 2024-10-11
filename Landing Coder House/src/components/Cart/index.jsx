@@ -8,7 +8,7 @@ function Cart() {
     const { cart } = useCartContext();
     
     if (cart.length === 0) {
-        return <div className={styles.emptyCart}>El carrito está vacío.</div>;
+        return <div className={styles.emptyCart}>El carrito está vacío 😞</div>;
     }
 
     return (
