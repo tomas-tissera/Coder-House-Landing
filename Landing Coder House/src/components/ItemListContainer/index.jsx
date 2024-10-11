@@ -15,10 +15,8 @@ function ItemListContainer() {
       try {
         let fetchedItems;
         if (categoryId) {
-          // Obtener productos filtrados por categoría
           fetchedItems = await getProductsFromCategory(categoryId);
         } else {
-          // Obtener todos los productos
           fetchedItems = await getProducts();
         }
         setItems(fetchedItems);

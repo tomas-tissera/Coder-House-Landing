@@ -24,14 +24,13 @@
   align-items: center;
   height: 100vh;
   font-size: 1.8rem;
-  color: #3a3a3a; /* Color gris oscuro */
+  color: #3a3a3a; 
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   animation: fade 1.2s infinite ease-in-out;
 }
 
-/* Animación de parpadeo */
 @keyframes fade {
   0%, 100% {
     opacity: 1;

@@ -1,5 +1,5 @@
 // Cart.jsx
-import React, { useState } from 'react'; // Importar useState
+import React, { useState } from 'react'; 
 import { useCartContext } from '../../context/cartContext';
 import styles from './CheckoutForm.module.css';
 import { FaDeleteLeft } from "react-icons/fa6";
@@ -27,7 +27,6 @@ function CheckoutForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Datos enviados:", formData);
-        // Aquí puedes manejar la lógica de envío, como realizar una petición a una API
         Swal.fire({
             title: "¿Está seguro?",
             text: "No podrá revertir esto!",
@@ -38,15 +37,15 @@ function CheckoutForm() {
             confirmButtonText: "Sí"
         }).then(async (result) => {
             if (result.isConfirmed) {
-                setLoading(true); // Comienza la carga
+                setLoading(true); 
                 try {
-                    await getCompra(totalPrice, cart , formData); // Espera a que se complete la compra
-                    clearCart(); // Vaciar el carrito
+                    await getCompra(totalPrice, cart , formData); 
+                    clearCart(); 
                 } catch (error) {
                     console.error("Error al realizar la compra:", error);
-                    Swal.fire("Error", "Hubo un problema al procesar su compra.", "error"); // Muestra un mensaje de error
+                    Swal.fire("Error", "Hubo un problema al procesar su compra.", "error"); 
                 } finally {
-                    setLoading(false); // Termina la carga
+                    setLoading(false);
                 }
             }
         });
@@ -92,7 +91,7 @@ function CheckoutForm() {
                             placeholder="5000"
                             required
                         />
-                         <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank" rel="noopener noreferrer" className={styles.link}>
+                            <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank" rel="noopener noreferrer" className={styles.link}>
                             ¿No sabes tu código postal?
                         </a>
                     </div>

@@ -13,12 +13,12 @@ function ItemDetailContainer() {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const allProducts = await getProducts();  // Obtiene todos los productos desde Firebase
-        const foundItem = allProducts.find(product => product.id === id);  // Busca el producto por id
+        const allProducts = await getProducts();  
+        const foundItem = allProducts.find(product => product.id === id);  
         if (!foundItem) {
           throw new Error('Producto no encontrado');
         }
-        setItem(foundItem);  // Actualiza el estado con el producto encontrado
+        setItem(foundItem);  
       } catch (error) {
         console.error('Error fetching item details:', error);
         setError(error.message);

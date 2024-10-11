@@ -1,5 +1,5 @@
 // Cart.jsx
-import React from 'react'; // Importar useState
+import React from 'react';
 import { useCartContext } from '../../context/cartContext';
 import styles from './CartItem.module.css';
 import { FaDeleteLeft } from "react-icons/fa6";
