@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ItemList from '../ItemList/INDEX.JSX';
+import ItemList from '../ItemList'
 import styles from './ItemListContainer.module.css'; 
 import getProducts, { getProductsFromCategory } from '../../firebase/db';
 import { useContext } from 'react';
